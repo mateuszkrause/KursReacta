@@ -6,49 +6,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Kurs Reacta - Tydzień 2</title>
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
   <style>
-  .app{
-    font-family: sans-serif;
-  }
-  .TimeboxEditor {
-    text-align: right;
-    border: 1px solid grey;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  input {
-    min-width: 60%;
-    margin-left: 20px;
-    font-size: 16px;
-  }
-  button {
-    font-style: 16px;
-    margin-left: 10px;
-  }
-  .Timebox {
-    border: 1px solid grey;
-    border-radius: 5px;
-    padding: 20px;
-    text-align: center;
-  }
-  .Clock {
-    color: orangered;
-  }
-  .ProgressBar {
-    border: 1px solid orangered;
-    border-radius: 5px;
-    height: 25px;
-    margin-bottom: 20px;
-    padding: 5px;
-  }
-  .ProgressBar > div {
-    height: 100%;
-    background-color: orangered;
-  }
-  .inactive {
-    filter: blur(2px) grayscale(1)
-  }
+    .app {
+      font-family: sans-serif;
+    }
+
+    .TimeboxEditor {
+      text-align: right;
+      border: 1px solid grey;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    input {
+      min-width: 60%;
+      margin-left: 20px;
+      font-size: 16px;
+    }
+
+    button {
+      font-style: 16px;
+      margin-left: 10px;
+    }
+
+    .Timebox {
+      border: 1px solid grey;
+      border-radius: 5px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .Clock {
+      color: orangered;
+    }
+
+    .ProgressBar {
+      border: 1px solid orangered;
+      border-radius: 5px;
+      height: 25px;
+      margin-bottom: 20px;
+      padding: 5px;
+    }
+
+    .ProgressBar>div {
+      height: 100%;
+      background-color: orangered;
+    }
+
+    .inactive {
+      filter: blur(2px) grayscale(1)
+    }
   </style>
 </head>
 
@@ -64,6 +74,7 @@
     <div class="Timebox">
       <h1>Uczę się skrótów klawiszowych</h1>
       <h2 class="Clock">Pozostało 13:28</h2>
+      <div id="root"></div>
       <div class="ProgressBar">
         <div style="margin-left: 20%;"></div>
       </div>
@@ -75,5 +86,22 @@
   </div>
 
 </body>
+<script type="text/javascript">
+  const rootElement = document.getElementById("root");
+  const domElement = document.createElement("h2");
+  domElement.className = "Clock"
+  domElement.textContent = "Pozostało 10:20"
+
+  //rootElement.append(domElement);
+
+  const element = React.createElement(
+    "h2",
+    { className: "Clock"},
+    "Pozostało 15:25"
+  )
+  console.log(domElement,element)
+
+  ReactDOM.render(element, rootElement);
+</script>
 
 </html>
