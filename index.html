@@ -28,7 +28,7 @@
     }
 
     button {
-      font-style: 16px;
+      font-size: 16px;
       margin-left: 10px;
     }
 
@@ -68,30 +68,37 @@
 
 <script type="text/javascript">
   const rootElement = document.getElementById("root");
-  const domElement = document.createElement("div");
-  domElement.innerHTML =
-    "<h1>Kurs Reacta - Tydzień 2</h1>"
-    + "<hr>"
-    + "<div class='app'>"
-    + "<div class='TimeboxEditor inactive'>"
-    + "<label>Co robisz? <input disabled value='Uczę się skrótów klawiszowych' type='text'></label><br>"
-    + "<label>Ile minut? <input disabled value='25' type='number'></label><br>"
-    + "<button disabled>Zacznij</button>"
-    + "</div>"
-    + "<div class='Timebox'>"
-    + "<h1>Uczę się skrótów klawiszowych</h1>"
-    + "<h2 class='Clock'>Pozostało 13:28</h2>"
-    + "<div class='ProgressBar'>"
-    + "<div style='margin-left: 20%;'></div>"
-    + "</div>"
-    + "<button disabled>Start</button>"
-    + "<button>Stop</button>"
-    + "<button>Pauzuj</button>"
-    + "Liczba przerw: 2"
-    + "</div>"
-    + "</div>";
-
-  rootElement.append(domElement);
+  const element = React.createElement(
+    "div",
+    null,
+    React.createElement("h1", null, "Kurs Reacta - Tydzień 2"),
+    React.createElement("hr"),
+    React.createElement("div", { className: "app" },
+      React.createElement("div", { className: "TimeboxEditor inactive" },
+        React.createElement("label", null, "Co robisz?",
+          React.createElement("input", { disabled: true, value: "Uczę się skrótów klawiszowych", type: "text" })
+        ),
+        React.createElement("br"),
+        React.createElement("label", null, "Ile minut?",
+          React.createElement("input", { disabled: true, value: "25", type: "number" })
+        ),
+        React.createElement("br"),
+        React.createElement("button", { disabled: true }, "Zacznij"),
+      ),
+      React.createElement("div", { className: "Timebox" },
+        React.createElement("h1", null, "Uczę się skrótów klawiszowych"),
+        React.createElement("h2", { className: "Clock" }, "Pozostało 13:28"),
+        React.createElement("div", { className: "ProgressBar" },
+          React.createElement("div", { style: { "margin-left": "50%" } })
+        ),
+        React.createElement("button", { disabled: true }, "Start"),
+        React.createElement("button", {}, "Stop"),
+        React.createElement("button", {}, "Pauzuj"),
+        React.createElement("span", null, "Liczba przerw: 2")
+      ),
+    )
+  );
+  ReactDOM.render(element, rootElement);
 </script>
 
 </html>
