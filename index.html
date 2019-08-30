@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Kurs Reacta - Tydzień 2</title>
+  <style>
+  .app{
+    font-family: sans-serif;
+  }
+  .TimeboxEditor {
+    text-align: right;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  input {
+    min-width: 60%;
+    margin-left: 20px;
+    font-size: 16px;
+  }
+  button {
+    font-style: 16px;
+    margin-left: 10px;
+  }
+  .Timebox {
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+  }
+  .Clock {
+    color: orangered;
+  }
+  .ProgressBar {
+    border: 1px solid orangered;
+    border-radius: 5px;
+    height: 25px;
+    margin-bottom: 20px;
+    padding: 5px;
+  }
+  .ProgressBar > div {
+    height: 100%;
+    background-color: orangered;
+  }
+  .inactive {
+    filter: blur(2px) grayscale(1)
+  }
+  </style>
+</head>
+
+<body>
+  <h1>Kurs Reacta - Tydzień 2</h1>
+  <hr>
+  <div class="app">
+    <div class="TimeboxEditor inactive">
+      <label>Co robisz? <input disabled value="Uczę się skrótów klawiszowych" type="text"></label><br>
+      <label>Ile minut? <input disabled value="25" type="number"></label><br>
+      <button disabled>Zacznij</button>
+    </div>
+    <div class="Timebox">
+      <h1>Uczę się skrótów klawiszowych</h1>
+      <h2 class="Clock">Pozostało 13:28</h2>
+      <div class="ProgressBar">
+        <div style="margin-left: 20%;"></div>
+      </div>
+      <button disabled>Start</button>
+      <button>Stop</button>
+      <button>Pauzuj</button>
+      Liczba przerw: 2
+    </div>
+  </div>
+
+</body>
+
+</html>
